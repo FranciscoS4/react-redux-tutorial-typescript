@@ -5,9 +5,11 @@ import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 
 import * as CourseActions from '../../store/actions/course';
 
-const Sidebar = ({modules} : {modules:any}, {toggleLesson} : {toggleLesson: any} ) => (
-  <aside>
-    { modules.map((module:any) => (
+const Sidebar = ( props: any ) => {
+  const {modules, toggleLesson} = props;
+  return (
+    <aside>
+    { modules.map((module: any) => (
       <div key={module.id}>
         <strong>{module.title}</strong>
         <ul>
@@ -25,9 +27,10 @@ const Sidebar = ({modules} : {modules:any}, {toggleLesson} : {toggleLesson: any}
       </div>
     ))}
   </aside>
-);
+  )
+};
 
-const mapStateToProps = (state: { course: { modules: any; }; }) => ({
+const mapStateToProps = (state: { course: any}) => ({
   modules: state.course.modules
 })
 

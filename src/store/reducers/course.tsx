@@ -1,6 +1,10 @@
 const INITIAL_STATE = {
-  activeLesson: {},
-  activeModule: {},
+  activeLesson: {
+    title: ""
+  },
+  activeModule: {
+    title: ""
+  },
     modules: [
       {
         id: 1, 
